@@ -3,6 +3,11 @@
 # Change to Temporary Directory
 cd /tmp
 
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+chmod +x composer.phar
+mv composer.phar /usr/local/bin/composer
+
 # Install PHPUnit
 curl -OL https://phar.phpunit.de/phpunit.phar
 chmod +x phpunit.phar
