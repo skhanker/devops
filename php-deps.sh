@@ -57,7 +57,11 @@ curl -OL https://github.com/Behat/Behat/releases/download/v3.2.1/behat.phar
 chmod u+x behat.phar
 mv behat.phar /usr/local/bin/behat
 
+# Symfony
 curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
 chmod a+x /usr/local/bin/symfony
+
+# Laravel
+composer global require "laravel/installer"
 
 echo "Updated"
