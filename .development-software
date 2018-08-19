@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+echo "\n# ---- Updating Your Dependencies!! --------------------------\n#"
+echo "# Run ~/.devops.macos to manually update DevOps-ish installs\n#"
+echo "# Local IP Addresses\n#"
+ifconfig | grep "inet " | awk '{ print "# "$2 }'
+echo "#\n# ----------------------------------------------------------\n "
+
+# Update Repositories
+brew update
+
+# Upgrade Packages
+brew upgrade
+
+# Tap third-party formulae
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap caskroom/versions
+
+# I've put these individually so that you can comment out based on your development needs
+# Javascript #
+brew install node
+brew install yarn
+brew install watchman
+
+yarn global add eslint@latest eslint-config-airbnb create-react-app create-react-native-app --prefix /usr/local
+
+# Java #
+brew cask install java8
+brew install maven
+
+# AWS Shell
+brew install awscli
+brew install aws-shell
+
+# Utilities
+brew install dos2unix
+brew install geoip
+brew install htop
+brew install calc
+brew install ncdu
+brew install nmap
+brew install wget
+brew install tree
+brew install youtube-dl
+brew install irssi
